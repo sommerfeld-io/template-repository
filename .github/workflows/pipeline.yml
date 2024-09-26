@@ -102,7 +102,11 @@ jobs:
             content=$(cat "$file")
 
             old="(usage/index.md)"
-            new="(https://sommerfeld-io.github.io/template-repository/usage/)"
+            new="(https://sommerfeld-io.github.io/template-repository/usage)"
+            content="${content//$old/$new}"
+
+            old="(about/development-guide.md)"
+            new="(https://sommerfeld-io.github.io/template-repository/about/development-guide)"
             content="${content//$old/$new}"
 
             echo "$content" > "$file"
