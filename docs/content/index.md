@@ -11,12 +11,8 @@ PoC for a project documentation in Markdown. This repository acts as a template 
 - Where to file issues: [File Issues][file-issues]
 - Project Board for Issues and PRs: [Project Board][project-board]
 
-This project contains comprehensive documentation and resources to help you navigate and understand the various aspects of our work. The following links provide access to all the documentation and contents within this project.
-
-<!-- TODO ... Sub-Nav (auto-generated) -->
-
-- [Getting started](usage/index.md)
-- [About this Project](about/index.md)
+<!-- TODO ... VHS image -->
+<!-- TODO ... update url in pipeline -->
 
 ## Things to do and to change when using this template repo
 - Run `gh repo edit --enable-discussions --enable-issues --enable-projects --enable-wiki=false --visibility=public`
