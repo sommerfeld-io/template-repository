@@ -12,10 +12,10 @@
 		"docs/build",
 		"docs/content/about/**",
 		"docs/content/usage/**",
+		"docs/site/**",
 
 		"node_modules/**",
 		"public/**",
-		"site/**",
 		"target/**"
 	]
 }

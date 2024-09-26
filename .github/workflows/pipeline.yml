@@ -60,6 +60,10 @@ jobs:
     if: ${{ github.actor != 'dependabot[bot]' }}
     permissions:
       contents: write
+    env:
+      DOCS_CONTEXT: docs/build
+      DOCS_DOCKERFILE: Dockerfile
+      DOCS_IMAGE: local/docs:dev
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -72,6 +76,20 @@ jobs:
           cp docs/about/license.md LICENSE.md
           cp docs/about/security.md SECURITY.md
         shell: bash
+      - name: hadolint
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: ${{ env.DOCS_CONTEXT }}/${{ env.DOCS_DOCKERFILE }}
+      - name: Build docs-build image
+        run: docker compose build docs-build
+        shell: bash
+      - name: Build docs page
+        run: docker compose up docs-build
+        shell: bash
+      - name: List contents
+        run: ls docs/site
+        shell: bash
+      # TODO upload
       - name: Commit and push
         uses: EndBug/add-and-commit@v9.1.4
         with:

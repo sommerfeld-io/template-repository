@@ -8,6 +8,5 @@ yamllint-*
 node_modules
 /node_modules/
 /public
-/site
 /target
 /dist

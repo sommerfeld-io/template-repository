@@ -11,7 +11,7 @@ repo_url: https://github.com/sommerfeld-io/poc-markdown-docs
 copyright: Copyright &copy; 2024 Sommerfeld.io
 
 docs_dir: docs/content
-site_dir: target/docs/site
+site_dir: docs/site
 
 theme:
   name: material
