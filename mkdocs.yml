@@ -10,7 +10,7 @@ repo_url: https://github.com/sommerfeld-io/poc-markdown-docs
 
 copyright: Copyright &copy; 2024 Sommerfeld.io
 
-docs_dir: docs
+docs_dir: docs/content
 site_dir: target/docs/site
 
 theme:
@@ -22,6 +22,9 @@ markdown_extensions:
   - toc:
       permalink: true
 
+plugins:
+  - kroki:
+
 nav:
   - Home: index.md
   - How to Use:
@@ -29,6 +32,7 @@ nav:
   - About this Project:
       - about/index.md
       - about/development-guide.md
+      - about/project-structure.md
       - about/contribute.md
       - about/security.md
       - about/code-of-conduct.md

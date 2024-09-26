@@ -9,9 +9,9 @@
 
 		".vscode",
 
-		"docs",
-		"docs/about/**",
-		"docs/usage/**",
+		"docs/build",
+		"docs/content/about/**",
+		"docs/content/usage/**",
 
 		"node_modules/**",
 		"public/**",

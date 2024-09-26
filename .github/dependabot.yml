@@ -10,3 +10,8 @@ updates:
     directory: .devcontainer
     schedule:
       interval: weekly
+
+  - package-ecosystem: docker
+    directory: docs/build
+    schedule:
+      interval: weekly
