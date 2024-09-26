@@ -1,6 +1,4 @@
 ---
-## This pipeline file tests the development environment setup (e.g. the devcontainer).
-
 name: Test Development Environment
 
 on:
