@@ -1,0 +1,22 @@
+---
+name: Release Pipeline
+
+on:
+  release:
+    types: [created]
+
+env:
+  IMAGE_TAG_RC: rc
+  IMAGE_TAG_LATEST: latest
+  IMAGE_NAME: poc-markdown-docs
+
+jobs:
+  publish-website:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: main
