@@ -1,4 +1,36 @@
+---
 site_name: Poc Markdown Docs
 site_url: https://www.sommerfeld.io
+site_author: Sebastian Sommerfeld
+site_description: >-
+  Template Repo for Markdown Docs
+
+repo_name: sommerfeld-io/poc-markdown-docs
+repo_url: https://github.com/sommerfeld-io/poc-markdown-docs
+
+copyright: Copyright &copy; 2024 Sommerfeld.io
+
+docs_dir: docs
+site_dir: target/docs/site
+
 theme:
   name: material
+  palette:
+    scheme: slate
+
+markdown_extensions:
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - How to Use:
+      - usage/index.md
+  - About this Project:
+      - about/index.md
+      - about/development-guide.md
+      - about/contribute.md
+      - about/security.md
+      - about/code-of-conduct.md
+      - about/license.md
+      - about/terms.md

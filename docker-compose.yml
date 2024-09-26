@@ -11,16 +11,25 @@ volumes:
 
 services:
 
-  lint-yaml:
-    container_name: ${COMPOSE_PROJECT_NAME}-lint-yaml
-    image: cytopia/yamllint:latest
+  cleanup:
+    container_name: ${COMPOSE_PROJECT_NAME}-cleanup
+    image: alpine:latest
     volumes: &volumes
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - project-root-volume:/workspaces/poc-markdown-docs
     working_dir: &default-workdir /workspaces/poc-markdown-docs
-    command: .
+    command: |
+      rm -rf target
     tty: &tty true
+
+  lint-yaml:
+    container_name: ${COMPOSE_PROJECT_NAME}-lint-yaml
+    image: cytopia/yamllint:latest
+    volumes: *volumes
+    working_dir: *default-workdir
+    command: .
+    tty: *tty
 
   lint-workflows:
     container_name: ${COMPOSE_PROJECT_NAME}-lint-workflows
@@ -51,3 +60,24 @@ services:
   #   volumes: *volumes
   #   working_dir: *default-workdir
   #   entrypoint: hadolint Dockerfile
+
+  docs-dev-server:
+    container_name: ${COMPOSE_PROJECT_NAME}-docs-dev-server
+    image: &docs-image squidfunk/mkdocs-material:9.5.38
+    volumes: *volumes
+    working_dir: *default-workdir
+    ports:
+      - 3080:8000
+    tty: *tty
+
+  docs-build:
+    container_name: ${COMPOSE_PROJECT_NAME}-docs-build
+    user: 1000:1000
+    image: *docs-image
+    volumes: *volumes
+    working_dir: *default-workdir
+    command: build
+    tty: *tty
+    depends_on:
+      cleanup:
+        condition: service_completed_successfully

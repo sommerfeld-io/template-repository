@@ -1,12 +1,13 @@
 .idea
 target
-node_modules
-/node_modules/
 .target
 *.log
 *.lock
 yamllint-*
 
+node_modules
+/node_modules/
 /public
+/site
 /target
 /dist

@@ -7,7 +7,7 @@
   "keywords": [],
   "author": "sebastian-sommerfeld.io",
   "license": "MIT",
-  "description": "Streamline the process of generating AsciiDoc documentation from inline comments in source code files",
+  "description": "Template Repo",
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/exec": "^6.0.3",

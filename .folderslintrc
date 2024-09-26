@@ -13,8 +13,9 @@
 		"docs/about/**",
 		"docs/usage/**",
 
-		"public/**",
 		"node_modules/**",
+		"public/**",
+		"site/**",
 		"target/**"
 	]
 }
