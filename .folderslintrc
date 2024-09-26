@@ -10,6 +10,7 @@
 		".vscode",
 
 		"docs/build",
+		"docs/content/_assets/**",
 		"docs/content/about/**",
 		"docs/content/usage/**",
 		"docs/site/**",

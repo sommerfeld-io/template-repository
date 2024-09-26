@@ -10,6 +10,8 @@ PoC for a project documentation in Markdown. This repository acts as a template 
 ## Things to do and to change when using this template repo
 - Run `gh repo edit --enable-discussions --enable-issues --enable-projects --enable-wiki=false --visibility=public`
 - Link the repository to project "sommerfeld.io"
+- Update GitHub deployment protection rules in "Settings > Environments" to allow deployments to GitHub pages from tags (add `v*`)
+  ![protection-rule](_assets/github-pages-environment-protection.png)
 - Update volume mounts and workdir in `docker-compose.yml`
 - Update name and description in `package.json`
 - Update site and repository information in `mkdocs.yml`
