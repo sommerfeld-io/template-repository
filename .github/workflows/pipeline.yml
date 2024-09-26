@@ -69,12 +69,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{github.ref}}
-      - name: Copy adoc files to project root
+      - name: Copy files from docs to project root
         run: |
-          cp docs/about/code-of-conduct.md CODE_OF_CONDUCT.md
-          cp docs/about/contribute.md CONTRIBUTING.md
-          cp docs/about/license.md LICENSE.md
-          cp docs/about/security.md SECURITY.md
+          cp docs/content/about/code-of-conduct.md CODE_OF_CONDUCT.md
+          cp docs/content/about/contribute.md CONTRIBUTING.md
+          cp docs/content/about/license.md LICENSE.md
+          cp docs/content/about/security.md SECURITY.md
         shell: bash
       - name: hadolint
         uses: hadolint/hadolint-action@v3.1.0
