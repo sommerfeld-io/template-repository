@@ -30,16 +30,18 @@ skinparam activity {
 |Scheduled|
     start
     :Dependabot;
-    floating note left: Dependabot\ncreates Branches
+    note left: Dependabot\ncreates Branches
 
 |All Branches|
     start
-    floating note right: Start here\nwithout Dependabot
+    note right: Start here\nwithout Dependabot
     split
         :Run Linters;
     split again
         :Generate Docs;
     end split
+
+|All Branches|
 
     split
         :Scan Code;
@@ -67,10 +69,16 @@ skinparam activity {
     endif
 
 |Tag|
-    :Publish Artifact
-    as Release :latest;
+    split
+        :Publish Artifact
+        as Release :latest;
 
-    :Validate Release;
+        :Validate Release;
+    split again
+        :Build Docs Website;
+        :Deploy Docs Website;
+    end split
+
     stop
 
 @enduml
@@ -95,7 +103,7 @@ skinparam activity {
 
     :Tag :rc;
 
-    floating note left: both tage were\nbuilt by some\nprevious pipeline\nrun with release
+    floating note left: both tags were\nbuilt by some\nprevious pipeline\nrun with release
 
 |All Branches|
     :New Tag :<commig-sha>;
