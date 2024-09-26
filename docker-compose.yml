@@ -66,14 +66,14 @@ services:
     container_name: ${COMPOSE_PROJECT_NAME}-docs-lint-dockerfile
     image: &lint-dockerfile-image hadolint/hadolint:latest
     volumes: *volumes
-    working_dir: /workspaces/template-repository/docs/build
+    working_dir: /workspaces/template-repository/docs
     entrypoint: hadolint Dockerfile
 
   docs-build:
     container_name: ${COMPOSE_PROJECT_NAME}-docs-build
     image: &docs-image local/docs:dev
     build:
-      context: docs/build
+      context: docs
       dockerfile: Dockerfile
     volumes: *volumes
     working_dir: *default-workdir

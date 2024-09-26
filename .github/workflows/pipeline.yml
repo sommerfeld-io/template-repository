@@ -56,7 +56,7 @@ jobs:
     name: ${{ matrix.context }}
     strategy:
       matrix:
-        context: ['docs/build'] # '.'
+        context: ['docs'] # '.'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
