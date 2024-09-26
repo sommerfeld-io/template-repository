@@ -29,7 +29,6 @@ permissions:
   contents: read
 
 jobs:
-  # ----- Commit stage - lint -------------------
 
   shellcheck:
     runs-on: ubuntu-latest
@@ -54,9 +53,40 @@ jobs:
         run: docker compose up lint-${{ matrix.linter }} --exit-code-from lint-${{ matrix.linter }}
         shell: bash
 
+  # ----- Build Docs stage ------------------------------------------------------------------------
+
+  docs:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{github.ref}}
+      - name: Copy adoc files to project root
+        run: |
+          cp docs/about/code-of-conduct.md CODE_OF_CONDUCT.md
+          cp docs/about/contribute.md CONTRIBUTING.md
+          cp docs/about/license.md LICENSE.md
+          cp docs/about/security.md SECURITY.md
+        shell: bash
+      - name: Commit and push
+        uses: EndBug/add-and-commit@v9.1.4
+        with:
+          author_name: sebastian
+          author_email: sebastian@sommerfeld.io
+          message: 'docs: [Actions Bot] generate docs'
+
+  # ----- Release stage ---------------------------------------------------------------------------
+
   release-code:
     runs-on: ubuntu-latest
-    needs: ['lint']
+    needs: [
+      'lint',
+      'docs',
+    ]
     if: ${{ (github.actor != 'dependabot[bot]') && (github.ref == 'refs/heads/main') }}
     permissions:
       contents: write

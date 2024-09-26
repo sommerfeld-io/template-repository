@@ -10,6 +10,8 @@
 		".vscode",
 
 		"docs",
+		"docs/about/**",
+		"docs/usage/**",
 
 		"public/**",
 		"node_modules/**",

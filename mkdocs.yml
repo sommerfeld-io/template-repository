@@ -1,0 +1,4 @@
+site_name: Poc Markdown Docs
+site_url: https://www.sommerfeld.io
+theme:
+  name: material
