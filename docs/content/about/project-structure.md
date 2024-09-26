@@ -4,14 +4,14 @@
 This is the structure of the repository with the most important directories and files. There is of course more in the repository, but the important parts are listed here.
 
 ```
++--+  docs
+|  +---  build                 # Helper image to build MkDocs with all needed dependencies
+|  +---  contents              # Actual documentation
+|  +---  site                  # Generated HTML based on Markdown (ignored from git)
 +--+  components
-|  +---  app                   # The main application code
-|  +---  configs               # Configuration files used in Docker images
-|  +---  test-acceptance       # BDD-style Acceptance tests
-|  +---  test-compliance       # Compliance tests with Chef Inspec
-+---  docs                     # Documentation (Antora component)
-+---  testdata                 # Test data for all kinds of tests
-+---  Dockerfile               # Multi-Stage Dockerfile for the main applicationwebsite
+|  +---  app                   # Application source code
+|  +---  ...                   # ...
++---  Dockerfile               # Multi-Stage Dockerfile for the application
 +---  docker-compose.yml       # Docker Compose file with the toolchain (e.g. for local development)
 ```
 

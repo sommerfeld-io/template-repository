@@ -72,7 +72,7 @@ jobs:
           ref: ${{github.ref}}
       - name: Copy files from docs to project root
         run: |
-          cp docs/content/about/index.md README.md
+          cp docs/content/index.md README.md
           cp docs/content/about/code-of-conduct.md CODE_OF_CONDUCT.md
           cp docs/content/about/contribute.md CONTRIBUTING.md
           cp docs/content/about/license.md LICENSE.md

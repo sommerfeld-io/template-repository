@@ -17,10 +17,10 @@ PoC for a project documentation in Markdown. This repository acts as a template 
 
 This project contains comprehensive documentation and resources to help you navigate and understand the various aspects of our work. The following links provide access to all the documentation and contents within this project.
 
+<!-- TODO ... Sub-Nav (auto-generated) -->
+
 - [Getting started](usage/index.md)
 - [About this Project](about/index.md)
-
-<!-- TODO ... Sub-Nav (auto-generated) -->
 
 [doc-website]: https://sommerfeld-io.github.io/poc-markdown-docs
 [github-repo]: https://github.com/sommerfeld-io/poc-markdown-docs
