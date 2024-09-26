@@ -53,17 +53,17 @@ jobs:
 
   lint-dockerfiles:
     runs-on: ubuntu-latest
-    name: ${{ matrix.context }}
+    name: ${{ matrix.dockerfile }}
     strategy:
       matrix:
-        context: ['docs'] # '.'
+        dockerfile: ['docs/Dockerfile']
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: hadolint
         uses: hadolint/hadolint-action@v3.1.0
         with:
-          dockerfile: ${{ matrix.context }}/Dockerfile
+          dockerfile: ${{ matrix.dockerfile }}
 
   # ----- Build Docs stage ------------------------------------------------------------------------
 
