@@ -133,8 +133,6 @@ skinparam activity {
 
     :Tag :rc;
 
-    note left: both tags were\nbuilt by some\nprevious pipeline\nrun with release
-
 |All Branches|
     :New Tag :<commig-sha>;
 
@@ -149,8 +147,6 @@ skinparam activity {
 
 |Branch: main|
     :New Tag :rc;
-
-    note left: no new scans\nbecause :rc is\na re-tagged\n:<commit-sha>
 
 |Tag|
     :New Tag :latest;
