@@ -18,7 +18,7 @@ VERSION="$1"
 function incrementVersionsInYaml() {
     yaml_files=(
         #"docs/antora.yml"
-        #"components/test-compliance/poc-markdown-docs/inspec.yml"
+        #"components/test-compliance/template-repository/inspec.yml"
     )
 
     for file in "${yaml_files[@]}"; do

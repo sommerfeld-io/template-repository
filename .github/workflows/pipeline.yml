@@ -21,7 +21,7 @@ on:
 env:
   IMAGE_TAG_RC: rc
   IMAGE_TAG_LATEST: latest
-  IMAGE_NAME: poc-markdown-docs
+  IMAGE_NAME: template-repository
   CONTEXT: .
   DOCKERFILE: Dockerfile
 
@@ -104,11 +104,7 @@ jobs:
             content=$(cat "$file")
 
             old="(usage/index.md)"
-            new="(docs/content/usage/index.md)"
-            content="${content//$old/$new}"
-
-            old="(about/index.md)"
-            new="(docs/content/about/index.md)"
+            new="(https://sommerfeld-io.github.io/template-repository/usage/)"
             content="${content//$old/$new}"
 
             echo "$content" > "$file"

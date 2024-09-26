@@ -1,12 +1,12 @@
 ---
-site_name: PoC Markdown Docs
+site_name: Template Repository
 site_url: https://www.sommerfeld.io
 site_author: Sebastian Sommerfeld
 site_description: >-
-  Template Repo for Markdown Docs
+  Template Repository for sommerfeld.io projects.
 
-repo_name: sommerfeld-io/poc-markdown-docs
-repo_url: https://github.com/sommerfeld-io/poc-markdown-docs
+repo_name: sommerfeld-io/template-repository
+repo_url: https://github.com/sommerfeld-io/template-repository
 
 copyright: Copyright &copy; 2024 Sommerfeld.io
 
@@ -17,10 +17,20 @@ theme:
   name: material
   palette:
     scheme: slate
+  features:
+    - content.code.copy
+    - content.tabs.link
 
 markdown_extensions:
   - toc:
       permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 plugins:
   - kroki:
@@ -30,9 +40,9 @@ nav:
   - Home: index.md
   - How to Use:
       - usage/index.md
+      - usage/markdown-components.md
       - usage/markdown-from-code.md
   - About this Project:
-      - about/index.md
       - about/development-guide.md
       - about/project-structure.md
       - about/contribute.md

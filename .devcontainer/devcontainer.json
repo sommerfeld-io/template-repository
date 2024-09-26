@@ -1,5 +1,5 @@
 {
-    "name": "poc-markdown-docs",
+    "name": "template-repository",
     "build": {
         "dockerfile": "Dockerfile"
     },

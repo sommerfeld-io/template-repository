@@ -1,4 +1,4 @@
-# PoC Markdown Docs
+# Template Repository
 
 PoC for a project documentation in Markdown. This repository acts as a template repository.
 
@@ -24,9 +24,9 @@ This project contains comprehensive documentation and resources to help you navi
 - [Getting started](docs/content/usage/index.md)
 - [About this Project](docs/content/about/index.md)
 
-[doc-website]: https://sommerfeld-io.github.io/poc-markdown-docs
-[github-repo]: https://github.com/sommerfeld-io/poc-markdown-docs
-[file-issues]: https://github.com/sommerfeld-io/poc-markdown-docs/issues
+[doc-website]: https://sommerfeld-io.github.io/template-repository
+[github-repo]: https://github.com/sommerfeld-io/template-repository
+[file-issues]: https://github.com/sommerfeld-io/template-repository/issues
 [project-board]: https://github.com/orgs/sommerfeld-io/projects/1/views/17
 
 <!-- !    DO NOT EDIT DIRECTLY !!!!!                              -->

@@ -1,25 +1,44 @@
-# PoC Markdown Docs
-[doc-website]: https://sommerfeld-io.github.io/poc-markdown-docs
-[github-repo]: https://github.com/sommerfeld-io/poc-markdown-docs
-[file-issues]: https://github.com/sommerfeld-io/poc-markdown-docs/issues
+# Template Repository
+[doc-website]: https://sommerfeld-io.github.io/template-repository
+[github-repo]: https://github.com/sommerfeld-io/template-repository
+[file-issues]: https://github.com/sommerfeld-io/template-repository/issues
 [project-board]: https://github.com/orgs/sommerfeld-io/projects/1/views/17
 
-PoC for a project documentation in Markdown. This repository acts as a template repository.
+This project is a template repository for creating new repositories with a pre-defined structure. This template repository is relevant for [sommerfeld.io](https://github.com/sommerfeld-io) projects.
 
-- Documentation Website: [Documentation Website][doc-website]
-- Github Repository: [Github Repository][github-repo]
-- Where to file issues: [File Issues][file-issues]
-- Project Board for Issues and PRs: [Project Board][project-board]
+!!! warning "Todo - Remove if not needed"
+    Short introduction to the project, its goals, and objectives.
 
-<!-- TODO ... VHS image -->
-<!-- TODO ... update url in pipeline -->
+- [Documentation Website][doc-website]
+- [Github Repository][github-repo]
+- [Where to file issues][file-issues]
+- [Project Board for Issues and Pull Requests][project-board]
 
-## Things to do and to change when using this template repo
-- Run `gh repo edit --enable-discussions --enable-issues --enable-projects --enable-wiki=false --visibility=public`
-- Link the repository to project "sommerfeld.io"
-- Update GitHub deployment protection rules in "Settings > Environments" to allow deployments to GitHub pages from tags (add `v*`)
-  ![protection-rule](_assets/github-pages-environment-protection.png)
-- Update volume mounts and workdir in `docker-compose.yml`
-- Update name and description in `package.json`
-- Update site and repository information in `mkdocs.yml`
-- Update documentation in `docs` directory
+## Requirements and Features
+This section outlines the basic requirements and features of the project. These requirements serve as a guideline for the development of the application and provide a clear overview of the expected functionality.
+
+!!! warning "Todo - Remove if not needed"
+    Short description of the functional requirements, driving forces, extract (or abstract) of requirements. Maybe link to GitHub issues (which are written as user stories) or to link some BDD-style executable specifications.
+
+## Usage
+!!! warning "Todo - Remove if not needed"
+    The basic commands to get any response from the system. This could be a simple `docker run ...` command. Link to the [Getting started](usage/index.md) guide for more detailed instructions.
+
+## Scope and Context
+!!! warning "Todo - Remove if not needed"
+    Who is the target audience of the software? Who are the stakeholders? Use a list when stakeholders are clearly identifiable. Otherwise write a short description (e.g. when stakeholders are possibly everybody because the software is offered as open source to the whole world).
+
+    Scope and context delimits your system (i.e. your scope) from all its communication partners (neighboring systems and users, i.e. the context  of your system). It thereby specifies the external interfaces.
+
+    If necessary, differentiate the business context (domain specific inputs and outputs) from the technical context (channels, protocols, hardware).
+
+## Architecture Constraints
+!!! warning "Todo - Remove if not needed"
+    Any requirement that constraints software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies. Only list constraints that are not covered in the [Development Guide](about/development-guide.md).
+
+## Building Block View
+!!! warning "Todo - Remove if not needed"
+    The building block view shows the components of the system and their relationships. It is a high-level view of the system architecture. Maybe think of C4 model diagrams. Do not write too much text here.
+
+## Contact
+Feel free to contact me via <sebastian@sommerfeld.io> or [raise an issue in this repository][file-issues].
