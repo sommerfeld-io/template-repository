@@ -21,6 +21,7 @@ services:
     working_dir: &default-workdir /workspaces/poc-markdown-docs
     command: |
       rm -rf target
+      rm -rf docs/site
     tty: &tty true
 
   lint-yaml:
@@ -70,7 +71,6 @@ services:
 
   docs-build:
     container_name: ${COMPOSE_PROJECT_NAME}-docs-build
-    user: 1000:1000
     image: &docs-image local/docs:dev
     build:
       context: docs/build
