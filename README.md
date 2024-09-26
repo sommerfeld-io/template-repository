@@ -1,3 +1,8 @@
+<!-- ---
+hide:
+  - navigation
+--- -->
+
 # Template Repository
 [doc-website]: https://sommerfeld-io.github.io/template-repository
 [github-repo]: https://github.com/sommerfeld-io/template-repository
