@@ -30,6 +30,7 @@ nav:
   - Home: index.md
   - How to Use:
       - usage/index.md
+      - usage/markdown-from-code.md
   - About this Project:
       - about/index.md
       - about/development-guide.md
