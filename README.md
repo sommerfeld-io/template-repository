@@ -10,3 +10,4 @@ PoC for a project documentation in Markdown
 - [ ] Name and description in `package.json`
 - [ ] Site and repository information in `mkdocs.yml`
 - [ ] Documentation in `docs` directory
+- [ ] Enable GitHub Pages with GutHub Actions in `Settings > Pages`

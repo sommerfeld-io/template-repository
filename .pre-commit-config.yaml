@@ -15,21 +15,13 @@ repos:
     rev: v4.4.0
     hooks:
       - id: trailing-whitespace
-        exclude: '^docs/site'
       - id: end-of-file-fixer
-        exclude: '^docs/site'
       - id: check-added-large-files
-        exclude: '^docs/site'
       - id: check-executables-have-shebangs
-        exclude: '^docs/site'
       - id: check-shebang-scripts-are-executable
-        exclude: '^docs/site'
       - id: check-json
-        exclude: '^docs/site'
       - id: check-merge-conflict
-        exclude: '^docs/site'
       - id: detect-private-key
-        exclude: '^docs/site'
   - repo: local
     hooks:
       - id: lint-yaml
