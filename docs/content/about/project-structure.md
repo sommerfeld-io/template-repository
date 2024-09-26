@@ -134,4 +134,4 @@ skinparam activity {
 ```
 
 ## Docker Image Build
-The Docker image build process is separated into multiple steps. The image is a Multi-Stage Dockerfile to ensure that the final image is as small as possible with as few dependencies as possible. Part of the build process is to run unit tests and acceptance tests to ensure that the image is working as expected. For more information, see link:https://github.com/sommerfeld-io/source2adoc/blob/main/Dockerfile[Dockerfile].
+The Docker image build process is separated into multiple steps. The image is a Multi-Stage Dockerfile to ensure that the final image is as small as possible with as few dependencies as possible. Part of the build process is to run unit tests and acceptance tests to ensure that the image is working as expected. For more information, see [Dockerfile](https://github.com/sommerfeld-io/poc-markdown-docs/blob/main/Dockerfile).
