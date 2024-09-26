@@ -20,21 +20,35 @@ The build pipeline is triggered by a commit to any branch in the repository. But
 
 ```kroki-plantuml
 @startuml
+!define PURPLE #4051B5
+!define WHITE #ffffff
+!define GREY #e2e4e9
+!define DARK_GREY #1e2129
 
-skinparam backgroundColor white
+skinparam backgroundColor transparent
+skinparam DefaultFontColor e2e4e9
+skinparam ArrowColor e2e4e9
+
+skinparam ActivityBackgroundColor PURPLE
+skinparam NoteFontColor DARK_GREY
+skinparam NoteBackgroundColor GREY
+skinparam DecisionBackgroundColor PURPLE
+skinparam ForkBackgroundColor PURPLE
+
+skinparam StartBackgroundColor GREY
+skinparam EndBackgroundColor GREY
+
 skinparam activity {
     'FontName Ubuntu
     FontName Roboto
 }
 
 |Scheduled|
-    start
+    GREY:(s)
     :Dependabot;
-    note left: Dependabot\ncreates Branches
 
 |All Branches|
     start
-    note right: Start here\nwithout Dependabot
     split
         :Run Linters;
     split again
@@ -62,7 +76,7 @@ skinparam activity {
 
 |Branch: main|
     if (release?) then (no)
-        stop
+        GREY:(s)
     else (yes)
         :Create Git Tag
         and GitHub Release;
@@ -79,7 +93,7 @@ skinparam activity {
         :Deploy Docs Website;
     end split
 
-    stop
+    GREY:(s)
 
 @enduml
 ```
@@ -89,21 +103,37 @@ We use the `docker-scout` tool to scan the Docker image for vulnerabilities. The
 
 ```kroki-plantuml
 @startuml
+!define PURPLE #4051B5
+!define WHITE #ffffff
+!define GREY #e2e4e9
+!define DARK_GREY #1e2129
 
-skinparam backgroundColor white
+skinparam backgroundColor transparent
+skinparam DefaultFontColor e2e4e9
+skinparam ArrowColor e2e4e9
+
+skinparam ActivityBackgroundColor PURPLE
+skinparam NoteFontColor DARK_GREY
+skinparam NoteBackgroundColor GREY
+skinparam DecisionBackgroundColor PURPLE
+skinparam ForkBackgroundColor PURPLE
+
+skinparam StartBackgroundColor GREY
+skinparam EndBackgroundColor GREY
+
 skinparam activity {
     'FontName Ubuntu
     FontName Roboto
 }
 
 |Existing|
-    start
+    GREY:(s)
 
     :Tag :latest;
 
     :Tag :rc;
 
-    floating note left: both tags were\nbuilt by some\nprevious pipeline\nrun with release
+    note left: both tags were\nbuilt by some\nprevious pipeline\nrun with release
 
 |All Branches|
     :New Tag :<commig-sha>;
@@ -120,7 +150,7 @@ skinparam activity {
 |Branch: main|
     :New Tag :rc;
 
-    floating note left: no new scans\nbecause :rc is\na re-tagged\n:<commit-sha>
+    note left: no new scans\nbecause :rc is\na re-tagged\n:<commit-sha>
 
 |Tag|
     :New Tag :latest;
@@ -128,7 +158,7 @@ skinparam activity {
     :Docker Scout CVS
     scan for :latest/
 
-    stop
+    GREY:(s)
 
 @enduml
 ```
