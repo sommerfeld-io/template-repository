@@ -16,6 +16,7 @@ This repository contains the following components:
     - [ ] Update volume mounts and workdir in `docker-compose.yml`
     - [ ] Update name and description in `package.json`
     - [ ] Update site and repository information anf (if needed) the theme/colors and navigation in `mkdocs.yml`
+    - [ ] Update Docker icon link in `mkdocs.yml` to point to the correct artifact on Docker Hub
 - [ ] Update GitHub deployment protection rules in "Settings > Environments" to allow deployments to GitHub pages from tags (add `v*`). It is possible that a the `pipeline.yml` workflow must run (and probably fail) first because this workflow contains a step which enables GitHub Pages for the repository.
   ![protection-rule](_assets/github-pages-environment-protection.png)
 - [ ] Update documentation in `docs` directory

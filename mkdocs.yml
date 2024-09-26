@@ -20,6 +20,10 @@ theme:
   features:
     - content.code.copy
     - content.tabs.link
+    # - navigation.tabs
+    - navigation.footer
+    - navigation.expand
+    - navigation.tracking
 
 markdown_extensions:
   - toc:
@@ -35,6 +39,13 @@ markdown_extensions:
 plugins:
   - kroki:
   - search:
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sommerfeld-io/template-repository
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/sommerfeldio
 
 nav:
   - Home: index.md
