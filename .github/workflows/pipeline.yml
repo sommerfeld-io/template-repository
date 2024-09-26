@@ -24,6 +24,7 @@ env:
   IMAGE_NAME: poc-markdown-docs
   CONTEXT: .
   DOCKERFILE: Dockerfile
+  DOCS_PAGES_ARTIFACT: docs-page
 
 permissions:
   contents: read
@@ -55,7 +56,7 @@ jobs:
 
   # ----- Build Docs stage ------------------------------------------------------------------------
 
-  docs:
+  docs-build:
     runs-on: ubuntu-latest
     if: ${{ github.actor != 'dependabot[bot]' }}
     permissions:
@@ -87,15 +88,36 @@ jobs:
         run: docker compose up docs-build
         shell: bash
       - name: List contents
-        run: ls docs/site
+        run: ls -alF docs/site
         shell: bash
-      # TODO upload
+      - name: Upload pages artifact
+        uses: actions/upload-artifact@v4.4.0
+        with:
+          name: ${{ env.DOCS_PAGES_ARTIFACT }}
+          path: docs/site
       - name: Commit and push
         uses: EndBug/add-and-commit@v9.1.4
         with:
           author_name: sebastian
           author_email: sebastian@sommerfeld.io
           message: 'docs: [Actions Bot] generate docs'
+
+  docs-deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' && github.ref == 'refs/heads/main' }}
+    needs: docs-build
+    permissions:
+      pages: write
+      id-token: write # to verify the deployment originates from an appropriate source
+    steps:
+      # - name: Download pages artifact
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: ${{ env.DOCS_PAGES_ARTIFACT }}
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4.0.5
+        with:
+          artifact_name: ${{ env.DOCS_PAGES_ARTIFACT }}
 
   # ----- Release stage ---------------------------------------------------------------------------
 
@@ -104,7 +126,7 @@ jobs:
     needs: [
       'lint',
       'shellcheck',
-      'docs',
+      'docs-deploy',
     ]
     if: ${{ (github.actor != 'dependabot[bot]') && (github.ref == 'refs/heads/main') }}
     permissions:

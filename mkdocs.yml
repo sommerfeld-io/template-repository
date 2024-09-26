@@ -24,6 +24,7 @@ markdown_extensions:
 
 plugins:
   - kroki:
+  - search:
 
 nav:
   - Home: index.md
