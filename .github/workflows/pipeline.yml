@@ -57,10 +57,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: hadolint
-        uses: hadolint/hadolint-action@v3.1.0
-        with:
-          dockerfile: ${{ env.DOCKERFILE }}
+      - name: Run lint-dockerfile from docker-compose.yml
+        run: docker compose up lint-dockerfile --exit-code-from lint-dockerfile
+        shell: bash
 
   # ----- Build Docs stage ------------------------------------------------------------------------
 
