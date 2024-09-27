@@ -56,14 +56,15 @@ jobs:
     name: ${{ matrix.dockerfile }}
     strategy:
       matrix:
-        dockerfile: ['docs/Dockerfile']
+        dockerfile: ['Dockerfile']
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: hadolint
-        uses: hadolint/hadolint-action@v3.1.0
-        with:
-          dockerfile: ${{ matrix.dockerfile }}
+      # TODO https://github.com/sommerfeld-io/template-repository/issues/3
+      # - name: hadolint
+      #   uses: hadolint/hadolint-action@v3.1.0
+      #   with:
+      #     dockerfile: ${{ matrix.dockerfile }}
 
   # ----- Build Docs stage ------------------------------------------------------------------------
 

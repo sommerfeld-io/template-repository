@@ -71,10 +71,7 @@ services:
 
   docs-build:
     container_name: ${COMPOSE_PROJECT_NAME}-docs-build
-    image: &docs-image local/docs:dev
-    build:
-      context: docs
-      dockerfile: Dockerfile
+    image: &docs-image sommerfeldio/mkdocs:latest
     volumes: *volumes
     working_dir: *default-workdir
     command: build
