@@ -23,6 +23,7 @@ theme:
     - content.tabs.link
     # - navigation.tabs
     - navigation.footer
+    # - navigation.sections
     - navigation.expand
     - navigation.tracking
 
