@@ -10,10 +10,10 @@
 		".vscode",
 
 		"docs",
-		"docs/content/_assets/**",
-		"docs/content/about/**",
-		"docs/content/usage/**",
-		"docs/site/**",
+		"docs/_assets/**",
+		"docs/about/**",
+		"docs/usage/**",
+		"target/docs/site/**",
 
 		"node_modules/**",
 		"public/**",
