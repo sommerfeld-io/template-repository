@@ -149,6 +149,10 @@ jobs:
       #     images: ${{ env.REGISTRY }}/${{ secrets.DOCKERHUB_USER }}/${{ env.IMAGE_NAME }}
       #     labels: |
       #       org.opencontainers.image.revision=${{ github.sha }}
+      #       org.opencontainers.image.title=${{ matrix.image-name }}
+      #       org.opencontainers.image.description=${{ matrix.image-name }}
+      #       org.opencontainers.image.vendor=sommerfeld-io
+      #       org.opencontainers.image.documentation=https://sommerfeld-io.github.io/template-repository
       # - name: Build the Docker image and push to
       #   uses: docker/build-push-action@v6
       #   with:
