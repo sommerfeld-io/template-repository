@@ -156,6 +156,8 @@ jobs:
       #     platforms: linux/amd64
       #     push: true
       #     tags: ${{ env.REGISTRY }}/${{ secrets.DOCKERHUB_USER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+      #     build-args: |
+      #       COMMIT_SHA=${{ github.sha }}
       #     labels: ${{ steps.meta.outputs.labels }}
       #     provenance: true
       #     sbom: true

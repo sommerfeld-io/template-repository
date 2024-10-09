@@ -84,7 +84,7 @@ services:
 
   app:
     container_name: ${COMPOSE_PROJECT_NAME}-app
-    image: ${COMPOSE_PROJECT_NAME}-app
+    image: ${COMPOSE_PROJECT_NAME}-app:${DEV_TAG}
     build:
       context: .
       dockerfile: Dockerfile
