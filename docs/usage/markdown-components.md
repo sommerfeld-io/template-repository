@@ -3,6 +3,7 @@
 Material for MkDocs is packed with many great features that make technical writing a joyful activity. For details, see Material for MkDocs [Reference Documentation](https://squidfunk.github.io/mkdocs-material/reference).
 
 ## Admonitions
+
 Admonitions, also known as call-outs, are an excellent choice for including side content without significantly interrupting the document flow. Material for MkDocs provides several different types of admonitions and allows for the inclusion and nesting of arbitrary content. See the [Material for MkDocs documentation](https://squidfunk.github.io/mkdocs-material/reference/admonitions) for details.
 
 ```markdown
@@ -49,6 +50,7 @@ Following is a list of type qualifiers provided by Material for MkDocs, whereas 
 - `quote`
 
 ## Content tabs
+
 Sometimes, it's desirable to group alternative content under different tabs, e.g. when describing how to access an API from different languages or environments. Material for MkDocs allows for beautiful and functional tabs, grouping code blocks and other content.
 
 ```markdown
@@ -66,4 +68,5 @@ Sometimes, it's desirable to group alternative content under different tabs, e.g
     At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
 ## Diagrams
+
 To render diagrams, the documentation site the [mkdocs-kroki-plugin](https://pypi.org/project/mkdocs-kroki-plugin). This allows to render diagrams in various formats like PlantUML, Mermaid, Graphviz, and others (see [Kroki.io](https://kroki.io) for all supported diagram types). Use code-fences with a tag of kroki-`<Module>` to place the code with the wanted diagram inside.

@@ -6,4 +6,5 @@ to work with shell scripts, but it can be used with any file that uses the hash-
 For installation instructions, please refer to the [shdoc documentation](https://github.com/reconquest/shdoc).
 
 ## How to generate markdown from source code files
+
 ...

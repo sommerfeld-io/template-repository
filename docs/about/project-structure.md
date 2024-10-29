@@ -1,9 +1,10 @@
 # Project and Repository Structure
 
 ## Filesystem Structure
+
 This is the structure of the repository with the most important directories and files. There is of course more in the repository, but the important parts are listed here.
 
-```
+```plaintext
 +--+  docs
 |  +---  build                 # Helper image to build MkDocs with all needed dependencies
 |  +---  contents              # Actual documentation
@@ -16,6 +17,7 @@ This is the structure of the repository with the most important directories and 
 ```
 
 ## Pipeline
+
 The build pipeline is triggered by a commit to any branch in the repository. But not all branches are treated equally. The `main` branch is the most important branch in the repository. It is the branch that is always deployable and is the branch that is used to deploy to production. Other branches use a subset of the pipeline to ensure that they can be merged into the `main` branch and are are in a deployable state.
 
 ```kroki-plantuml
@@ -99,6 +101,7 @@ skinparam activity {
 ```
 
 ### Docker Scout Scan
+
 We use the `docker-scout` tool to scan the Docker image for vulnerabilities. The tool is run as part of the Docker image build process in out pipeline. The tool is configured not to break the build, but to provide a report of the vulnerabilities found in the image. The report is then used to decide if the image is safe or if it needs to be fixed.
 
 ```kroki-plantuml
@@ -160,4 +163,5 @@ skinparam activity {
 ```
 
 ## Docker Image Build
+
 The Docker image build process is separated into multiple steps. The image is a Multi-Stage Dockerfile to ensure that the final image is as small as possible with as few dependencies as possible. Part of the build process is to run unit tests and acceptance tests to ensure that the image is working as expected. For more information, see [Dockerfile](https://github.com/sommerfeld-io/template-repository/blob/main/Dockerfile).
