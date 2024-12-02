@@ -11,7 +11,7 @@ This repository contains the following components:
 
 ## Things to do when using this template repository
 
-- [ ] Run `gh repo edit --enable-discussions --enable-issues --enable-projects --enable-wiki=false --visibility=public` to ensure consistent settings across repositories.
+- [ ] Run `gh repo edit --enable-discussions --enable-issues --enable-projects --enable-wiki=false --visibility=public --accept-visibility-change-consequences` to ensure consistent settings across repositories.
 - [ ] Link the repository to project [sommerfeld.io](https://github.com/orgs/sommerfeld-io/projects/1)
 - [ ] Search for `Template Repository` in all files and replace with the name of the new project. Search for `template-repository` as well and replace with the name of the GitHub repository (the part of the URL). Doing so should update the following files:
     - [ ] Update volume mounts and workdir in `docker-compose.yml`
