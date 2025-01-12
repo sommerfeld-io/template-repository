@@ -40,7 +40,7 @@ This section outlines the basic requirements and features of the project. These 
 ## Architecture Constraints
 
 !!! warning "Todo - Remove if not needed"
-    Any requirement that constraints software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies. Only list constraints that are not covered in the [Development Guide](https://sommerfeld-io.github.io/template-repository/about/development-guide).
+    Any requirement that constraints software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies. Only list constraints that are not covered in the [Development Guide](about/development-guide.md).
 
 ## Building Block View
 
