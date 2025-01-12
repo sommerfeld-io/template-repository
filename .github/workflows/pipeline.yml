@@ -44,7 +44,7 @@ jobs:
     name: ${{ matrix.linter }}
     strategy:
       matrix:
-        linter: ['yaml', 'workflows', 'filenames', 'folders']
+        linter: ['yaml', 'workflows', 'filenames', 'folders', 'markdown-links']
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -101,7 +101,7 @@ jobs:
             new="(https://sommerfeld-io.github.io/template-repository/usage)"
             content="${content//$old/$new}"
 
-            old="(about/development-guide.md)"
+            old="(development-guide.md)"
             new="(https://sommerfeld-io.github.io/template-repository/about/development-guide)"
             content="${content//$old/$new}"
 

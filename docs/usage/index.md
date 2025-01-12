@@ -19,7 +19,6 @@ This repository contains the following components:
     - [ ] Update site and repository information anf (if needed) the theme/colors and navigation in `mkdocs.yml`
     - [ ] Update Docker icon link in `mkdocs.yml` to point to the correct artifact on Docker Hub
 - [ ] Update GitHub deployment protection rules in "Settings > Environments" to allow deployments to GitHub pages from tags (add `v*`). It is possible that a the `pipeline.yml` workflow must run (and probably fail) first because this workflow contains a step which enables GitHub Pages for the repository.
-  ![protection-rule](_assets/github-pages-environment-protection.png)
 - [ ] Update documentation in `docs` directory
     - [ ] Remove the docs that are intended to explain the template repository. These are the files in the `docs/usage` directory. Replace them with the real usage documentation.
     - [ ] Inspect the `docs/about` directory and update the content to reflect the new project.
