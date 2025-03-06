@@ -200,6 +200,7 @@ jobs:
   release-code:
     runs-on: ubuntu-latest
     needs: [
+      'lint',
       'publish-rc',
       'generate-docs',
     ]
