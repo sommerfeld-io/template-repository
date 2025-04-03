@@ -13,10 +13,5 @@
     "[markdown]": {
         "editor.formatOnSave": true,
         "editor.formatOnPaste": true
-    },
-    "[shellscript]": {
-        "editor.tabSize": 2
-    },
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true
+    }
 }
