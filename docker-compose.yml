@@ -85,7 +85,7 @@ services:
       - 3080:8000
     tty: *tty
 
-  lint-dockerfile:
+  app-lint-dockerfile:
     container_name: ${COMPOSE_PROJECT_NAME}-lint-dockerfile
     image: &lint-dockerfile-image hadolint/hadolint:latest
     volumes: *volumes
@@ -99,5 +99,5 @@ services:
       context: .
       dockerfile: Dockerfile
     depends_on:
-      lint-dockerfile:
+      app-lint-dockerfile:
         condition: service_completed_successfully

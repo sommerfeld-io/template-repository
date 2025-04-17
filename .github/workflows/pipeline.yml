@@ -75,8 +75,8 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Run lint-dockerfile from docker-compose.yml
-        run: docker compose up lint-dockerfile --exit-code-from lint-dockerfile
+      - name: Run lint dockerfile
+        run: docker compose up app-lint-dockerfile --exit-code-from app-lint-dockerfile
         shell: bash
 
   # ----- Build Docs stage ------------------------------------------------------------------------
