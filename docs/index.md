@@ -30,7 +30,7 @@ This section outlines the basic requirements and features of the project. These 
 ## Usage
 
 !!! warning "Todo - Remove if not needed"
-    The basic commands to get any response from the system. This could be a simple `docker run ...` command. Link to the [Getting started](usage/index.md) guide for more detailed instructions.
+    The basic commands to get any response from the system. This could be a simple `docker run ...` command.
 
 ## Scope and Context
 

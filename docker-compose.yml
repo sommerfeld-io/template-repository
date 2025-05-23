@@ -1,4 +1,11 @@
 ---
+x-volumes: &volumes
+  - /etc/timezone:/etc/timezone:ro
+  - /etc/localtime:/etc/localtime:ro
+  - project-root-volume:/workspaces/template-repository
+x-workdir: &default-workdir /workspaces/template-repository
+x-tty: &tty true
+
 volumes:
 
   project-root-volume:
@@ -8,23 +15,7 @@ volumes:
       device: .
       o: bind
 
-
 services:
-
-  cleanup:
-    container_name: ${COMPOSE_PROJECT_NAME}-cleanup
-    image: alpine:latest
-    volumes: &volumes
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-      - project-root-volume:/workspaces/template-repository
-    working_dir: &default-workdir /workspaces/template-repository
-    command:
-      - /bin/ash
-      - -c
-      - |
-        rm -rf target
-    tty: &tty true
 
   lint-yaml:
     container_name: ${COMPOSE_PROJECT_NAME}-lint-yaml
@@ -72,9 +63,6 @@ services:
     working_dir: *default-workdir
     command: build
     tty: *tty
-    depends_on:
-      cleanup:
-        condition: service_completed_successfully
 
   docs-dev-server:
     container_name: ${COMPOSE_PROJECT_NAME}-docs-dev-server
