@@ -1,8 +1,3 @@
-<!-- ---
-hide:
-  - navigation
---- -->
-
 # Template Repository
 
 [doc-website]: https://sommerfeld-io.github.io/template-repository
@@ -17,6 +12,7 @@ This project is a template repository for creating new repositories with a pre-d
 
 - [Documentation Website][doc-website]
 - [Github Repository][github-repo]
+- [Sonarcloud Code Quality and Security Analysis](https://sonarcloud.io/project/overview?id=sommerfeld-io_template-repository)
 - [Where to file issues][file-issues]
 - [Project Board for Issues and Pull Requests][project-board]
 
