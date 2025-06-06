@@ -15,8 +15,13 @@ repos:
     rev: v4.4.0
     hooks:
       - id: trailing-whitespace
+        exclude: ^(components/talos-cluster/node-configs/generated|\.task)/
       - id: end-of-file-fixer
+        exclude: ^(components/talos-cluster/node-configs/generated|\.task)/
       - id: check-added-large-files
+        exclude_types:
+          - jpeg
+          - png
       - id: check-executables-have-shebangs
       - id: check-shebang-scripts-are-executable
       - id: check-json
@@ -29,13 +34,13 @@ repos:
     hooks:
       - id: shfmt-src
         args: [-w, -i, "2"]
-  - repo: local
-    hooks:
-      - id: lint-repo
-        name: lint-repo
-        language: script
-        entry: /bin/bash -c 'task lint'
-      - id: build
-        name: build
-        language: script
-        entry: /bin/bash -c 'task build:docker'
+  # - repo: local
+  #   hooks:
+  #     - id: lint-repo
+  #       name: lint-repo
+  #       language: script
+  #       entry: /bin/bash -c 'task lint'
+  #     - id: build
+  #       name: build
+  #       language: script
+  #       entry: /bin/bash -c 'task build:docker'

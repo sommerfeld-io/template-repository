@@ -4,45 +4,24 @@ version: '3.42.1'
 dotenv: ['.env']
 
 vars:
-  INSPEC_COMPOSE_SERVICE: chef/inspec:5.22.76
-  INSPEC_PROFILES: ['ansible-baseline']
   REPO: https://raw.githubusercontent.com/sommerfeld-io/.github
 
+includes:
+  common: https://raw.githubusercontent.com/sommerfeld-io/.github/refs/heads/main/assets/task/common.yml
+
 tasks:
-
-  internal:download:
-    desc: 'Download file from central repo'
-    internal: true
-    silent: true
-    cmds:
-      - curl -fsSL -o "{{ .DEST }}" "{{ .URL }}"
-      - chmod u+rw,g+rw,o+r "{{ .DEST }}"
-    generates:
-      - "{{ .DEST }}"
-
-  internal:copy:
-    desc: 'Do the actual work of copying files'
-    internal: true
-    silent: true
-    cmds:
-      - cp "{{ .SRC }}" "{{ .DEST }}"
-      - chmod u+rw,g+rw,o+r "{{ .DEST }}"
-    generates:
-      - "{{ .DEST }}"
-
-  # ===============================================================================================
 
   sync:assets-from-github:
     desc: 'Sync assets from the central sommerfeldio/.github repository'
     cmds:
       - echo "Syncing assets from the central sommerfeldio/.github repository..."
-      - task: internal:download
+      - task: common:download
         vars: { DEST: ".github/instructions/code-guideline-pipelines.md", URL: "{{ .REPO }}/refs/heads/main/docs/code-guideline-pipelines.md" }
-      - task: internal:download
+      - task: common:download
         vars: { DEST: ".github/instructions/pull-requests.yml", URL: "{{ .REPO }}/refs/heads/main/assets/github/instructions/pull-requests.yml" }
-      - task: internal:download
+      - task: common:download
         vars: { DEST: ".github/workflows/housekeeping-issues.yml", URL: "{{ .REPO }}/refs/heads/main/assets/github/workflows/housekeeping-issues.yml" }
-      - task: internal:download
+      - task: common:download
         vars: { DEST: ".github/workflows/housekeeping-labels.yml", URL: "{{ .REPO }}/refs/heads/main/assets/github/workflows/housekeeping-labels.yml" }
 
   # ===============================================================================================
@@ -70,9 +49,9 @@ tasks:
     desc: 'Generate Markdown files for documentation'
     cmds:
       - echo "Collecting documentation from other Markdown files ..."
-      - task: internal:copy
+      - task: common:copy
         vars: { SRC: docs/index.md, DEST: README.md }
-      - task: internal:copy
+      - task: common:copy
         vars: { SRC: docs/license.md, DEST: LICENSE.md }
 
   docs:run:
@@ -87,5 +66,6 @@ tasks:
     vars:
       COMPOSE_SERVICE: 'app'
     cmds:
+      - task: cleanup
       - docker compose up {{ .COMPOSE_SERVICE }}-lint-dockerfile --exit-code-from {{ .COMPOSE_SERVICE }}-lint-dockerfile
       - docker compose build {{ .COMPOSE_SERVICE }}

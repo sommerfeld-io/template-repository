@@ -44,6 +44,8 @@ ignore:
   - target/docs/site
   - target
 
+  - .task
+
   # linter definitions etc.
   - .editorconfig
   - .hadolint.yml
