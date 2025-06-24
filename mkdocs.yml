@@ -21,15 +21,15 @@ theme:
     text: Work Sans
   palette:
     scheme: slate
-    primary: black
+    primary: blue grey # black
     accent: deep orange
   features:
     - content.code.copy
     - content.tabs.link
     # - navigation.tabs
     - navigation.footer
-    # - navigation.sections
     - navigation.expand
+    # - navigation.sections
     - navigation.tracking
 
 markdown_extensions:
@@ -66,15 +66,14 @@ extra:
       link: https://hub.docker.com/u/sommerfeldio
 
 nav:
-  - Home:
-      - Startpage: index.md
-      - license.md
-      - Releases on GitHub ⧉: https://github.com/sommerfeld-io/template-repository/releases
-      - Architecture Decision Records on GitHub ⧉: https://github.com/sommerfeld-io/template-repository/issues?q=is%3Aissue+label%3AADR
-      - Security Policy ⧉: https://github.com/sommerfeld-io/.github/blob/main/SECURITY.md
-      - How to Contribute ⧉: https://github.com/sommerfeld-io/.github/blob/main/CONTRIBUTING.md
-      - Code of Conduct ⧉: https://github.com/sommerfeld-io/.github/blob/main/CODE_OF_CONDUCT.md
-      - Terms of Use ⧉: https://github.com/sommerfeld-io/.github/blob/main/docs/terms.md
+  - Startpage: index.md
   - How to Use:
       - usage/index.md
       - usage/markdown-components.md
+  - license.md
+  - Releases on GitHub ⧉: https://github.com/sommerfeld-io/template-repository/releases
+  - Architecture Decision Records on GitHub ⧉: https://github.com/sommerfeld-io/template-repository/issues?q=is%3Aissue+label%3AADR
+  - Security Policy ⧉: https://github.com/sommerfeld-io/.github/blob/main/SECURITY.md
+  - How to Contribute ⧉: https://github.com/sommerfeld-io/.github/blob/main/CONTRIBUTING.md
+  - Code of Conduct ⧉: https://github.com/sommerfeld-io/.github/blob/main/CODE_OF_CONDUCT.md
+  - Terms of Use ⧉: https://github.com/sommerfeld-io/.github/blob/main/docs/terms.md
