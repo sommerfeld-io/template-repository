@@ -49,7 +49,6 @@ tasks:
     desc: 'Generate Markdown files for documentation'
     cmds:
       - echo "Collecting documentation from other Markdown files ..."
-      - cp mkdocs-template.yml mkdocs.yml
       - task: common:copy
         vars: { SRC: docs/index.md, DEST: README.md }
       - task: common:copy
