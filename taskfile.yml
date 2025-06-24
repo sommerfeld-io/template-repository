@@ -49,14 +49,18 @@ tasks:
     desc: 'Generate Markdown files for documentation'
     cmds:
       - echo "Collecting documentation from other Markdown files ..."
+      - cp mkdocs-template.yml mkdocs.yml
       - task: common:copy
         vars: { SRC: docs/index.md, DEST: README.md }
       - task: common:copy
         vars: { SRC: docs/license.md, DEST: LICENSE.md }
+        # TODO See https://github.com/sommerfeld-io/configs-homelab for auto-generating nav entries
+        # TODO and docs from other README files or remove this comment
 
   docs:run:
     desc: 'Run the documentation server'
     cmds:
+      - task: docs:generate
       - docker compose up docs-dev-server
 
   # ===============================================================================================
