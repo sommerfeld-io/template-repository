@@ -23,7 +23,7 @@ This repository contains the following components:
     - [ ] Remove the docs that are intended to explain the template repository. These are the files in the `docs/usage` directory. Replace them with the real usage documentation.
     - [ ] Inspect the `docs/about` directory and update the content to reflect the new project.
 - [ ] Setup Actions secrets and dependabot secrets in the repository settings
-- [ ] Configure Dependabot id [project settings on Github](https://github.com/sommerfeld-io/container-images/settings/security_analysis)
+- [ ] Configure Dependabot id project settings on the Github by updating `Settings -> Advanced Security`
     - [ ] Dependency graph = Enabled
     - [ ] Automatic dependency submission = Enabled
     - [ ] Dependabot alerts = Enabled
