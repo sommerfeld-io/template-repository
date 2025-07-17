@@ -102,6 +102,7 @@ jobs:
       'lint',
       'lint-dockerfile',
       'shellcheck',
+      'files-should-exist',
     ]
     permissions:
       contents: read
