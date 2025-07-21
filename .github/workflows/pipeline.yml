@@ -94,7 +94,8 @@ jobs:
             .gitignore,
             taskfile.yml,
             .github/dependabot.yml,
-            .task/.gitkeep
+            .task/.gitkeep,
+            .vscode/settings.json
 
   # ----- Build images stage ----------------------------------------------------------------------
 
